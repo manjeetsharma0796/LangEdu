@@ -1,3 +1,24 @@
+# LangEdu (Built on Educhain testnet)
+LangEdu: A decentralized app for anonymous language exchange, connecting global learners through blockchain and personalized tokens on EDU Chain.
+
+### Key Features:
+
+- Anonymous Language Learning: Connect and learn without revealing your identity.
+- Blockchain Security: Built on EDU Chain for secure, transparent, and tamper-proof interactions.
+- Tokenized Rewards: Earn personalized tokens for progress and engagement, supporting a DeFi model.
+- Global Connections: Practice with native speakers from around the world.
+- Flexible Learning: Choose text, audio, or video sessions to fit your learning style.
+
+### Why LangEdu?
+
+- Aligning with Learning Track: A secure, interactive platform for global language learners.
+- Incentivized Learning: Tokens reward users for active participation and milestones.
+- DeFi Integration: Tokens can be traded or used within the platform, adding financial value to learning.
+- Privacy Focus: Full control over personal data and interactions.
+- LangEdu redefines language exchange by blending privacy, blockchain security, and a decentralized token system for motivated, global learners.
+
+-------
+
 Add this LangEDU token as manually into your wallet on EDU Chain
 
 Contract Address = 0xF63cFCE89397a98a53FC0eb347eFb1E2DA87346D
