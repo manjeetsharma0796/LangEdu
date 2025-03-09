@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.5",
+    "@opencampus/ocid-connect-js": "^1.2.6",
     "ethers": "^6.13.4",
     "gsap": "^3.12.5",
     "lucide-react": "^0.453.0",

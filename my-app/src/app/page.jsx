@@ -1,18 +1,36 @@
+'use client'
 import Link from 'next/link';
 import React from 'react';
+import LoginButton from '@/app/components/LoginButton';
+import { useOCAuth } from '@opencampus/ocid-connect-js';
 
 const LandingPage = () => {
+  const { authState, ocAuth } = useOCAuth();
+
+  // Ensure authState is defined before accessing its properties
+  if (!authState) {
+    return <div>Loading authentication...</div>;
+  }
+
+  if (authState.error) {
+    return <div>Error: {authState.error.message}</div>;
+  }
+
+  if (authState.isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#f8f4f1] via-[#e8e6f4] to-[#f8e6e6]"></div>
-      
+
       {/* Navigation */}
       <nav className="relative z-10">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center py-6">
             <div className="bg-white/30 backdrop-blur-sm rounded-full px-8 py-2 shadow-sm hover:bg-white/40 transition-colors duration-300">
-              <div className="flex space-x-12">
+              <div className="flex space-x-12 items-center">
                 <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-300">
                   Start Learning
                 </a>
@@ -22,6 +40,11 @@ const LandingPage = () => {
                 <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-300">
                   Get Tokens
                 </a>
+                {authState.isAuthenticated ? (
+                  <p>You are logged in! {JSON.stringify(ocAuth.getAuthState())}</p>
+                ) : (
+                  <LoginButton />
+                )}
               </div>
             </div>
           </div>
@@ -40,7 +63,7 @@ const LandingPage = () => {
           <p className="text-gray-500 text-sm tracking-[0.3em] uppercase mb-12 animate-fade-in-up-delay-2">
             Master Languages While Earning Rewards
           </p>
-          
+
           {/* Get Started Button */}
           <div className="animate-fade-in-up-delay-3">
             <Link href="/dashboard" className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white transition-all duration-300 ease-in-out bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:scale-105 hover:shadow-xl">
@@ -73,7 +96,7 @@ const LandingPage = () => {
             <h2 className="text-4xl font-light text-gray-800 mb-4">What & Why</h2>
             <p className="text-gray-500">Discover how LangEdu is revolutionizing language learning</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:bg-white/50 transform hover:-translate-y-1 transition-all duration-300">
               <h3 className="text-2xl font-light text-gray-800 mb-4">What is LangEdu?</h3>
@@ -81,7 +104,7 @@ const LandingPage = () => {
                 LangEdu is an innovative language learning platform that combines traditional learning methods with blockchain technology. Our unique approach allows learners to earn tokens while mastering new languages, creating a rewarding educational experience that keeps you motivated and engaged.
               </p>
             </div>
-            
+
             <div className="bg-white/40 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:bg-white/50 transform hover:-translate-y-1 transition-all duration-300">
               <h3 className="text-2xl font-light text-gray-800 mb-4">Why Choose Us?</h3>
               <p className="text-gray-600 leading-relaxed">
