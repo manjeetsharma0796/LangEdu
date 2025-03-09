@@ -23,7 +23,7 @@ const geistMono = localFont({
 
 export default function RootLayout({ children }) {
   const opts = {
-    redirectUri: 'https://studious-engine-9v99pppvvggfpvj9-3000.app.github.dev/redirect', // Adjust this URL
+    redirectUri: 'https://langedu.vercel.app/redirect', // Adjust this URL
     referralCode: 'PARTNER6', // Assign partner code
   };
   
