@@ -41,7 +41,7 @@ const LandingPage = () => {
                   Get Tokens
                 </a>
                 {authState.isAuthenticated ? (
-                  <p>You are logged in! {JSON.stringify(ocAuth.getAuthState())}</p>
+                  <p>You are logged in! {JSON.stringify(ocAuth.getAuthState().OCId)}</p>
                 ) : (
                   <LoginButton />
                 )}
