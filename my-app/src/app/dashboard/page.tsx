@@ -148,7 +148,7 @@ const DashboardPage = () => {
     const signer = await provider.getSigner()
     const address = await signer.getAddress()
     console.log("Wallet Address:", address)
-    const humorTokenContract = new ethers.Contract(contractAddress, lingPro.abi, signer)
+  const humorTokenContract = new ethers.Contract(contractAddress, lingPro, signer)
     console.log(claimAmt, "========inside withdraw===")
 
     await (
@@ -174,7 +174,7 @@ const DashboardPage = () => {
     const signer = await provider.getSigner()
     const address = await signer.getAddress()
     console.log("Wallet Address:", address)
-    const humorTokenContract = new ethers.Contract(contractAddress, lingPro.abi, signer)
+  const humorTokenContract = new ethers.Contract(contractAddress, lingPro, signer)
     console.log(claimAmt, "========inside withdraw===")
 
     await (await humorTokenContract.mint(address, ethers.parseUnits(claimAmt.toString(), 18))).wait()
