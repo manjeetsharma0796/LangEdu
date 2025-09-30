@@ -137,7 +137,7 @@ const DashboardPage = () => {
 
   const donateInititate = async () => {
     const claimAmt = 10
-    const contractAddress = "0xF63cFCE89397a98a53FC0eb347eFb1E2DA87346D"
+    const contractAddress = "0x9a029110265785024cb1ba340df3521c3281a5f8"
     if (typeof window.ethereum === "undefined") {
       console.log("Ethereum provider is not available.")
       return
@@ -163,7 +163,7 @@ const DashboardPage = () => {
   const withdrawInititate = async () => {
     setShowDropdown(!showDropdown)
     const claimAmt = 25
-    const contractAddress = "0xF63cFCE89397a98a53FC0eb347eFb1E2DA87346D"
+    const contractAddress = "0x9a029110265785024cb1ba340df3521c3281a5f8"
     if (typeof window.ethereum === "undefined") {
       console.log("Ethereum provider is not available.")
       return

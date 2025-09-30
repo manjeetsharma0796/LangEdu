@@ -1,8 +1,8 @@
-# **Lango (Built on Educhain Testnet)**  
+# **Langedu (Built on U2U Testnet)**  
 **A Decentralized App for Anonymous Language Exchange**  
 
 ## **Overview**  
-Lango is a next-generation decentralized application (dApp) designed for anonymous language exchange, empowering global learners through blockchain security, AI-powered assessment, and personalized token incentives. Built on the **Educhain Testnet**, Lango ensures secure, interactive, and rewarding language learning experiences while maintaining user privacy.  
+Langedu is a next-generation decentralized application (dApp) designed for anonymous language exchange, empowering global learners through blockchain security, AI-powered assessment, and personalized token incentives. Built on the **U2U Testnet**, Langedu ensures secure, interactive, and rewarding language learning experiences while maintaining user privacy.  
 
 ## **Key Features**  
 
@@ -11,8 +11,8 @@ Lango is a next-generation decentralized application (dApp) designed for anonymo
 - Full control over your personal data and interactions.  
 
 ### 🔹 **Blockchain Security & Tokenized Rewards**  
-- Built on **Educhain**, ensuring tamper-proof and transparent interactions.  
-- Earn **Lango tokens** for progress and engagement, supporting a **DeFi-driven learning ecosystem**.  
+- Built on **U2U**, ensuring tamper-proof and transparent interactions.  
+- Earn **Langedu tokens** for progress and engagement, supporting a **DeFi-driven learning ecosystem**.  
 - Trade or utilize tokens within the platform for premium learning resources.  
 
 ### 🔹 **AI-Powered Language Assessment & Feedback**  
@@ -29,27 +29,27 @@ Lango is a next-generation decentralized application (dApp) designed for anonymo
 - **Peer Review & Community Feedback:** Get corrections and insights from fellow learners.  
 - **NFT-Based Language Certificates:** Earn verifiable blockchain-based certificates upon course completion.  
 
-## **New Features in EDUCHAIN SEMESTER 3**  
+## **New Features in U2U SEMESTER 3**  
 🚀 **Advanced AI Conversation Practice** – Engage in AI-powered dialogues for immersive learning.  
 📢 **Grammar & Pronunciation Checker** – Instant AI feedback on spoken and written input.  
 📚 **Custom Learning Paths** – Follow AI-suggested courses based on progress.  
 🌍 **Peer Review & Community Feedback** – Collaborate with other learners for real-time improvement.  
 🏆 **NFT-Based Language Certificates** – Earn blockchain-verified certificates.  
 
-## **Why Choose Lango?**  
+## **Why Choose Langedu?**  
 ✅ **Aligns with Learning Track** – Supports structured learning paths.  
-✅ **Incentivized Learning** – Earn and trade Lango tokens for engagement.  
+✅ **Incentivized Learning** – Earn and trade Langedu tokens for engagement.  
 ✅ **DeFi Integration** – Adds financial value to education through token-based rewards.  
 ✅ **Enhanced AI Experience** – AI-driven learning ensures personalized progress.  
 ✅ **Privacy-Focused** – Anonymity and security at the core of the platform.  
 
-## **Add Lango Token to Your Wallet**  
-Manually add **Lango token** to your wallet on **Educhain**:  
+## **Add Langedu Token to Your Wallet**  
+Manually add **Langedu token** to your wallet on **U2U**:  
 
-**Contract Address:** `0xF63cFCE89397a98a53FC0eb347eFb1E2DA87346D`  
+**Contract Address:** `0x9a029110265785024cb1ba340df3521c3281a5f8`  
 
-🔗 **[Verify the Contract -> Verify Lango]**  
+🔗 **[Verify the Contract -> Verify Langedu]**  
 
 ---
 
-Lango redefines global language learning by integrating privacy, blockchain security, and decentralized incentives, making learning engaging, secure, and financially rewarding! 🚀
+Langedu redefines global language learning by integrating privacy, blockchain security, and decentralized incentives, making learning engaging, secure, and financially rewarding! 🚀
