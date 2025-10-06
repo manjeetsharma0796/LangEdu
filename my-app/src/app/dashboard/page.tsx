@@ -73,6 +73,7 @@ const DashboardPage = () => {
   const [isGeneratingExam, setIsGeneratingExam] = useState(false)
   const [generatedExam, setGeneratedExam] = useState<any>(null)
   const [examMarkdown, setExamMarkdown] = useState<string>("")
+  const [toast, setToast] = useState<{ message: string; type?: "info" | "success" | "error" } | null>(null)
 
   // Exam state
   const [examState, setExamState] = useState<ExamState>({
@@ -181,15 +182,18 @@ const DashboardPage = () => {
 
   const handleExamGeneration = async () => {
     setIsGeneratingExam(true)
+    setToast({ message: "Initiating blockchain transaction...", type: "info" })
 
     try {
       // First, call donateInititate with amount 5
       try {
         await donateInititate(5)
+        setToast({ message: "Transaction successful! Generating exam...", type: "success" })
       } catch (donateError) {
         console.error("Error in donateInititate:", donateError)
-        alert("Transaction failed. Exam generation halted.")
+        setToast({ message: "Transaction failed. Exam generation halted.", type: "error" })
         setIsGeneratingExam(false)
+        setTimeout(() => setToast(null), 4000)
         return
       }
 
@@ -237,15 +241,20 @@ const DashboardPage = () => {
         // Create markdown representation
         const markdown = `# ${examSettings.language} ${examSettings.difficulty} Exam\n\n${JSON.stringify(data, null, 2)}`
         setExamMarkdown(markdown)
+        setToast({ message: "Exam generated successfully!", type: "success" })
+        setTimeout(() => setToast(null), 4000)
       } catch (jsonError) {
         console.error("Error parsing JSON response:", jsonError, responseText)
         // If JSON parsing fails, just use the text response directly
         setGeneratedExam({ content: responseText })
         setExamMarkdown(`# ${examSettings.language} ${examSettings.difficulty} Exam\n\n${responseText}`)
+        setToast({ message: "Exam generated, but could not parse questions.", type: "error" })
+        setTimeout(() => setToast(null), 4000)
       }
     } catch (error) {
       console.error("Error generating exam:", error)
-      alert("Failed to generate exam. Please try again later.")
+      setToast({ message: "Failed to generate exam. Please try again later.", type: "error" })
+      setTimeout(() => setToast(null), 4000)
     } finally {
       setIsGeneratingExam(false)
     }
@@ -789,6 +798,15 @@ const DashboardPage = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#f8f4f1] via-[#e8e6f4] to-[#f8e6e6]">
+      {/* Toast Notification */}
+      {toast && (
+        <div
+          className={`fixed top-6 left-1/2 z-[9999] transform -translate-x-1/2 px-6 py-3 rounded-lg shadow-lg text-white font-medium transition-all duration-300
+            ${toast.type === "info" ? "bg-blue-500" : toast.type === "success" ? "bg-green-600" : "bg-red-600"}`}
+        >
+          {toast.message}
+        </div>
+      )}
       {/* Navigation */}
       <nav className="sticky top-0 z-50 backdrop-blur-sm bg-white/30">
         <div className="max-w-6xl mx-auto px-4">
@@ -864,13 +882,13 @@ const DashboardPage = () => {
             onClick={() => setShowAIExamModal(true)}
             className="w-full bg-white/40 backdrop-blur-sm rounded-2xl p-6 shadow-sm hover:bg-white/50 transition-all duration-300 flex items-center justify-between"
           >
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
-                <Book size={24} className="text-white" />
+            <div className="flex items-center rounded-xl pl-3 pr-4 py-2 gap-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                <Book size={22} className="text-white" />
               </div>
-              <div>
-                <h2 className="text-xl font-medium text-gray-800">AI Assessment </h2>
-                <p className="text-sm text-gray-600">Generate custom language exams with AI</p>
+              <div className="flex flex-col text-left">
+                <h2 className="text-xl font-medium text-gray-800 m-0">AI Assessment</h2>
+                <p className="text-sm text-gray-600 m-0">Generate custom language exams with AI</p>
               </div>
             </div>
             <ChevronRight size={20} className="text-gray-500" />
