@@ -1,8 +1,8 @@
-# **Langedu (Built on U2U Testnet)**  
+# **Langedu (Built on U2U Mainnet)**  
 **A Decentralized App for Anonymous Language Exchange**  
 
 ## **Overview**  
-Langedu is a next-generation decentralized application (dApp) designed for anonymous language exchange, empowering global learners through blockchain security, AI-powered assessment, and personalized token incentives. Built on the **U2U Testnet**, Langedu ensures secure, interactive, and rewarding language learning experiences while maintaining user privacy.  
+Langedu is a next-generation decentralized application (dApp) designed for anonymous language exchange, empowering global learners through blockchain security, AI-powered assessment, and personalized token incentives. Built on the **U2U Mainnet**, Langedu ensures secure, interactive, and rewarding language learning experiences while maintaining user privacy.  
 
 ## **Key Features**  
 
@@ -29,7 +29,7 @@ Langedu is a next-generation decentralized application (dApp) designed for anony
 - **Peer Review & Community Feedback:** Get corrections and insights from fellow learners.  
 - **NFT-Based Language Certificates:** Earn verifiable blockchain-based certificates upon course completion.  
 
-## **New Features in U2U SEMESTER 3**  
+## **New Features in U2U Mainnet**  
 🚀 **Advanced AI Conversation Practice** – Engage in AI-powered dialogues for immersive learning.  
 📢 **Grammar & Pronunciation Checker** – Instant AI feedback on spoken and written input.  
 📚 **Custom Learning Paths** – Follow AI-suggested courses based on progress.  
@@ -46,10 +46,10 @@ Langedu is a next-generation decentralized application (dApp) designed for anony
 ## **Add Langedu Token to Your Wallet**  
 Manually add **Langedu token** to your wallet on **U2U**:  
 
-**Contract Address:** `0x9a029110265785024cb1ba340df3521c3281a5f8`  
+**Contract Address:** `0x7451b20d0F38f53CE9DB8481caFaaAA084380466`  
 
 🔗 **[Verify the Contract -> Verify Langedu]**  
-
+    https://u2uscan.xyz/token/0x7451b20d0F38f53CE9DB8481caFaaAA084380466
 ---
 
 Langedu redefines global language learning by integrating privacy, blockchain security, and decentralized incentives, making learning engaging, secure, and financially rewarding! 🚀
