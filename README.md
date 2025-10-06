@@ -46,10 +46,10 @@ Langedu is a next-generation decentralized application (dApp) designed for anony
 ## **Add Langedu Token to Your Wallet**  
 Manually add **Langedu token** to your wallet on **U2U**:  
 
-**Contract Address:** `0x7451b20d0F38f53CE9DB8481caFaaAA084380466`  
+**Contract Address:** `0xFC6635d10e0E99f5ac2C7e89Fcd87057E6A5936e`  
 
 🔗 **[Verify the Contract -> Verify Langedu]**  
-    https://u2uscan.xyz/token/0x7451b20d0F38f53CE9DB8481caFaaAA084380466
+    https://u2uscan.xyz/token/0xFC6635d10e0E99f5ac2C7e89Fcd87057E6A5936e
 ---
 
 Langedu redefines global language learning by integrating privacy, blockchain security, and decentralized incentives, making learning engaging, secure, and financially rewarding! 🚀
