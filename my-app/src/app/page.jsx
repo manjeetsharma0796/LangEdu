@@ -40,11 +40,11 @@ const LandingPage = () => {
                 <a href="#" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors duration-300">
                   Get Tokens
                 </a>
-                {authState.isAuthenticated ? (
+                {/* {authState.isAuthenticated ? (
                   <p>You are logged in! {JSON.stringify(ocAuth.getAuthState().OCId)}</p>
                 ) : (
                   <LoginButton />
-                )}
+                )} */}
               </div>
             </div>
           </div>

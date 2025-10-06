@@ -135,12 +135,11 @@ const DashboardPage = () => {
     // Additional logic for starting the lesson
   }
 
-  const donateInititate = async () => {
-    const claimAmt = 10
-    const contractAddress = "0x9a029110265785024cb1ba340df3521c3281a5f8"
+  const donateInititate = async (claimAmt = 10) => {
+    const contractAddress = "0x7451b20d0F38f53CE9DB8481caFaaAA084380466"
     if (typeof window.ethereum === "undefined") {
       console.log("Ethereum provider is not available.")
-      return
+      throw new Error("Ethereum provider is not available.")
     }
 
     const provider = new BrowserProvider(window.ethereum)
@@ -148,7 +147,7 @@ const DashboardPage = () => {
     const signer = await provider.getSigner()
     const address = await signer.getAddress()
     console.log("Wallet Address:", address)
-  const humorTokenContract = new ethers.Contract(contractAddress, lingPro, signer)
+    const humorTokenContract = new ethers.Contract(contractAddress, lingPro.abi, signer)
     console.log(claimAmt, "========inside withdraw===")
 
     await (
@@ -163,7 +162,7 @@ const DashboardPage = () => {
   const withdrawInititate = async () => {
     setShowDropdown(!showDropdown)
     const claimAmt = 25
-    const contractAddress = "0x9a029110265785024cb1ba340df3521c3281a5f8"
+    const contractAddress = "0x7451b20d0F38f53CE9DB8481caFaaAA084380466"
     if (typeof window.ethereum === "undefined") {
       console.log("Ethereum provider is not available.")
       return
@@ -174,7 +173,7 @@ const DashboardPage = () => {
     const signer = await provider.getSigner()
     const address = await signer.getAddress()
     console.log("Wallet Address:", address)
-  const humorTokenContract = new ethers.Contract(contractAddress, lingPro, signer)
+  const humorTokenContract = new ethers.Contract(contractAddress, lingPro.abi, signer)
     console.log(claimAmt, "========inside withdraw===")
 
     await (await humorTokenContract.mint(address, ethers.parseUnits(claimAmt.toString(), 18))).wait()
@@ -184,6 +183,17 @@ const DashboardPage = () => {
     setIsGeneratingExam(true)
 
     try {
+      // First, call donateInititate with amount 5
+      try {
+        await donateInititate(5)
+      } catch (donateError) {
+        console.error("Error in donateInititate:", donateError)
+        alert("Transaction failed. Exam generation halted.")
+        setIsGeneratingExam(false)
+        return
+      }
+
+      // Only proceed to generate exam if transaction succeeded
       const response = await fetch("https://aiedu-ok8q.onrender.com/ai/", {
         method: "POST",
         headers: {
@@ -859,7 +869,7 @@ const DashboardPage = () => {
                 <Book size={24} className="text-white" />
               </div>
               <div>
-                <h2 className="text-xl font-medium text-gray-800">AI Language Exam Generator</h2>
+                <h2 className="text-xl font-medium text-gray-800">AI Assessment </h2>
                 <p className="text-sm text-gray-600">Generate custom language exams with AI</p>
               </div>
             </div>
@@ -1001,7 +1011,7 @@ const DashboardPage = () => {
               <X size={20} />
             </button>
 
-            <h3 className="text-xl font-medium text-gray-800 mb-6">AI Language Exam Generator</h3>
+            <h3 className="text-xl font-medium text-gray-800 mb-6">AI Assessment </h3>
 
             {!generatedExam && !examState.examInProgress && !examState.examCompleted && (
               <div className="space-y-6">
